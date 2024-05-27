@@ -76,7 +76,9 @@ const LoginPage = () => {
   };
 
   return (
-    <Container fluid className="login-container">
+
+  <Container fluid className="login-container">
+
       <Row className="vh-100">
         <Col
           md={6}

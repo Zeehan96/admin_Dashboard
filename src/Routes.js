@@ -17,6 +17,8 @@ import VerifyPin from "./pages/VerifyPin";
 import PasswordConfirmation from "./pages/ConfirmPassword";
 import AddMember from "./pages/AddMember";
 import ViewDetail from "./pages/ViewDetail";
+import PageNotFound from "./pages/PageNotFound";
+import Test from "./pages/Test";
 export default function RoutesComponent() {
   const theme = createTheme({
     status: {
@@ -32,6 +34,8 @@ export default function RoutesComponent() {
       <Route path="/verifypin" element={<VerifyPin />}></Route>
       <Route path="/passwordconfirm" element={<PasswordConfirmation />}></Route> */}
         <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/test" element={<Test />}></Route>
+
 
         <Route path="/" element={<DashboardLayout />}>
           <Route path="/home" element={<HomePage />} />
@@ -39,9 +43,11 @@ export default function RoutesComponent() {
           <Route path="/programs" element={<Programs />} />
           <Route path="/members" element={<Members />} />
           <Route path="/add-member" element={<AddMember />} />
+
           <Route path="/view-detail" element={<ViewDetail />} />
         </Route>
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </ThemeProvider>
   );

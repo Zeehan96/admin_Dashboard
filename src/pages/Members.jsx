@@ -8,6 +8,7 @@ import {
   TablePagination,
   Checkbox,
 } from "@mui/material";
+import TextEditor from "./TextEditor";
 
 export default function Members() {
   const [data, setData] = useState([]);
@@ -157,8 +158,6 @@ export default function Members() {
           variant="contained"
           color="success"
           onClick={handleAddMember}
-          disabled={loadingNavigation}
-          startIcon={loadingNavigation ? <CircularProgress size={20} /> : null}
         >
           Add A Member +
         </Button>
@@ -192,6 +191,7 @@ export default function Members() {
                 <tr key={item.id}>
                   <td>
                     <Checkbox
+                      style={{ color: "#50C87" }}
                       checked={checked[item.id] || false}
                       onChange={() => handleCheckboxChange(item.id)}
                     />
@@ -241,6 +241,7 @@ export default function Members() {
               display: "flex",
               justifyContent: "center",
               marginTop: "20px",
+              marginBottom: "20px",
             }}
           >
             <Button
@@ -253,6 +254,7 @@ export default function Members() {
               Delete Selected Data
             </Button>
           </div>
+          <TextEditor />
         </>
       )}
     </div>

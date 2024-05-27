@@ -25,7 +25,7 @@ export default function AddMember(props) {
       <h2 style={{ color: "goldenrod" }}>Add/Edit Member</h2>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               name="userId"
               label="User ID"
@@ -36,7 +36,7 @@ export default function AddMember(props) {
               style={{ marginBottom: "20px", borderColor: "gold" }}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               name="id"
               label="ID"
@@ -47,7 +47,7 @@ export default function AddMember(props) {
               style={{ marginBottom: "20px" }}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               name="title"
               label="Title"
@@ -58,7 +58,7 @@ export default function AddMember(props) {
               style={{ marginBottom: "20px" }}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <TextField
               name="body"
               label="Body"
@@ -67,6 +67,19 @@ export default function AddMember(props) {
               multiline
               rows={4}
               value={member.body || ""}
+              onChange={handleChange}
+              style={{ marginBottom: "20px" }}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              name="description"
+              label="Description"
+              variant="outlined"
+              fullWidth
+              multiline
+              rows={2}
+              value={member.description || ""}
               onChange={handleChange}
               style={{ marginBottom: "20px" }}
             />
